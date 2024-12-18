@@ -1,0 +1,97 @@
+[
+  {
+    "_disabled_id": "How to Use_Save these definitions as JSON files or directly register them with the C9 API. Use the create endpoint to add them to your C9 workspace for execution and integration."
+  },
+  {
+    "_disabled_id": "Wrapper for find_pam_general (Bottom Level)",
+    "id": "org.c9.function.bioinformatics.find_pam_general",
+    "name": "find_pam_general",
+    "description": "Finds the index of the PAM sequence in a DNA sequence.",
+    "type": "function",
+    "keywords": ["PAM", "CRISPR", "DNA sequence", "bioinformatics"],
+    "date_created": "2024-12-03",
+    "date_last_modified": "2024-12-03",
+    "inputs": [
+      {"name": "target_sequence", "type": "string", "description": "The DNA sequence to be scanned for the PAM."},
+      {"name": "pam", "type": "string", "description": "The PAM sequence to search for."}
+    ],
+    "outputs": [{"type": "integer", "description": "The start index of the PAM sequence in the DNA sequence, or -1 if not found."}],
+    "execution_details": {
+      "language": "python",
+      "source": "CTK_BioE134_Final_Project_Bottom_Level",
+      "invocation": "find_pam_general(target_sequence, pam)"
+    }
+  },
+  {
+    "_disabled_id": "Wrapper for design_grna_general (Bottom Level)",
+    "id": "org.c9.function.bioinformatics.design_grna_general",
+    "name": "design_grna_general",
+    "description": "Designs a gRNA sequence for a given CRISPR toolkit and DNA sequence. The CRISPR toolkit determines the PAM sequence and protospacer length.",
+    "type": "function",
+    "keywords": ["gRNA design", "CRISPR", "bioinformatics", "PAM sequence"],
+    "date_created": "2024-12-03",
+    "date_last_modified": "2024-12-16",
+    "inputs": [
+      {"name": "target_sequence", "type": "string", "description": "The DNA sequence to be targeted. Must include a valid PAM sequence."},
+      {"name": "crispr_toolkit_name", "type": "string", "description": "The name of the CRISPR toolkit to use. Possible values: 'SpCas9 Toolkit', 'FnCas12a Toolkit', 'SaCas9 Toolkit'."}
+    ],
+    "outputs": [{"type": "string", "description": "The designed gRNA sequence, including the protospacer and the toolkit-specific scaffold."}],
+    "examples": [
+      {
+        "input": {"target_sequence": "ATGCGTATGCGTAGCTGATGCGTNGGTAGCTTTTV", "crispr_toolkit_name": "SpCas9 Toolkit"},
+        "output": "GCGTAGCTGATGCGTAGGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGC"
+      }
+    ],
+    "execution_details": {
+      "language": "python",
+      "source": "CTK_BioE134_Final_Project_Bottom_Level",
+      "invocation": "design_grna_general(target_sequence, crispr_toolkit_name)"
+    }
+  },
+  {
+    "_disabled_id": "Wrapper for ToolkitSelector.select_toolkit (Middle Level)",
+    "id": "org.c9.function.bioinformatics.select_toolkit",
+    "name": "select_toolkit",
+    "description": "Selects the most suitable CRISPR toolkit based on plant compatibility and PAM presence.",
+    "type": "function",
+    "keywords": ["CRISPR", "toolkit selection", "bioinformatics"],
+    "date_created": "2024-12-03",
+    "date_last_modified": "2024-12-03",
+    "inputs": [
+      {"name": "plant_name", "type": "string", "description": "The name of the plant species."},
+      {"name": "target_sequence", "type": "string", "description": "The DNA sequence to be analyzed for PAM compatibility."}
+    ],
+    "outputs": [{"type": "object", "description": "The selected CRISPR toolkit object."}],
+    "execution_details": {
+      "language": "python",
+      "source": "CTK_BioE134_Final_Project_Middle_Level",
+      "invocation": "select_toolkit(plant_name, target_sequence)"
+    }
+  },
+  {
+    "_disabled_id": "Wrapper for gRNADesigner.design_gRNA (Middle Level)",
+    "id": "org.c9.function.bioinformatics.design_gRNA",
+    "name": "design_gRNA",
+    "description": "Designs a gRNA sequence using a selected CRISPR toolkit object. The toolkit defines the PAM sequence, protospacer length, and scaffold.",
+    "type": "function",
+    "keywords": ["CRISPR", "gRNA design", "bioinformatics", "toolkit selection"],
+    "date_created": "2024-12-03",
+    "date_last_modified": "2024-12-16",
+    "inputs": [
+      {"name": "target_sequence", "type": "string", "description": "The DNA sequence to be targeted. Must include a valid PAM sequence for the selected toolkit."},
+      {"name": "toolkit", "type": "object", "description": "The selected CRISPR toolkit object containing the PAM sequence, protospacer length, and scaffold sequence."}
+    ],
+    "outputs": [{"type": "string", "description": "The complete designed gRNA sequence."}],
+    "examples": [
+      {
+        "input": {"target_sequence": "TTTTTTTTTTTTTTTTTTTTNGGATGCGTAGCTGATGCGTAGGTTT", "toolkit": {"name": "SpCas9 Toolkit", "pam": "NGG", "protospacer_length": 20, "scaffold": "GTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGC"}},
+        "output": "TTTTTTTTTTTTTTTTTTTTGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGC"
+      }
+    ],
+    "execution_details": {
+      "language": "python",
+      "source": "CTK_BioE134_Final_Project_Middle_Level",
+      "invocation": "design_gRNA(target_sequence, toolkit)"
+    }
+  }
+]

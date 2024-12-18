@@ -1,0 +1,114 @@
+Plant Genome Editing using CRISPR
+Project Scope
+This project provides a Python-based toolkit for designing and generating construction files tailored for CRISPR-mediated genome editing in plants. The toolkit streamlines plant-specific genetic modifications by:
+
+Selecting the appropriate CRISPR/Cas system.
+Designing guide RNAs (gRNAs).
+Generating detailed protocols for plant genome editing workflows.
+The architecture supports multiple Cas systems, enabling genome editing in various plant species across genomic contexts (e.g., AT-rich or GC-rich regions).
+
+Project Architecture
+The toolkit employs a three-tiered architecture:
+
+1. Top Level: Construction File Creation
+Purpose: Generates a high-level construction file for CRISPR genome editing.
+Inputs: Plant name, target gene sequence.
+Outputs:
+Selected CRISPR toolkit.
+Designed gRNA sequence.
+Protocol steps for constructing and delivering the CRISPR vector into plant tissues.
+2. Middle Level: Toolkit Selection
+Purpose: Identifies the most suitable CRISPR toolkit.
+Logic:
+Matches plant species with compatible CRISPR toolkits.
+Ensures the target sequence includes the required PAM sequence.
+3. Bottom Level: gRNA Design
+Purpose: Designs guide RNAs compatible with the selected Cas system and target sequence.
+Outputs: Complete gRNA sequences combining the protospacer and tracrRNA.
+Core Components
+1. ToolkitSelector Class (Middle Level)
+Purpose: Selects the appropriate CRISPR toolkit based on plant compatibility and PAM presence.
+Inputs:
+plant_name (str): Name of the plant species.
+target_sequence (str): DNA sequence to analyze.
+Outputs: CRISPRToolkit object with the selected toolkit details.
+2. gRNADesigner Class (Middle Level)
+Purpose: Designs a gRNA for the given target sequence and selected CRISPR toolkit.
+Inputs:
+target_sequence (str): DNA sequence containing the PAM site.
+toolkit (CRISPRToolkit): CRISPR toolkit object.
+Outputs: Complete gRNA sequence (protospacer + scaffold).
+3. ConstructionFileCreator Class (Top Level)
+Purpose: Generates high-level construction files outlining genome editing steps.
+Inputs:
+plant_name (str): Name of the plant species.
+target_sequence (str): DNA target sequence.
+toolkit (CRISPRToolkit): Selected CRISPR toolkit.
+gRNA (str): Designed gRNA sequence.
+Outputs: Formatted construction file detailing the PCR, digestion, ligation, and transformation steps.
+Code Structure
+plaintext
+Copy code
+CTK_BioE134_Final_Project/
+│
+├── __init__.py                                # Package initializer
+├── CTK_BioE134_C9_Wrappers                    # C9 JSON wrappers
+├── CTK_BioE134_Citations.txt                  # Project bibliography
+├── CTK_BioE134_Final Project_README           # README documentation
+├── CTK_BioE134_Final_Project_Bottom_Level.py  # Bottom-Level: Core Functions
+├── CTK_BioE134_Final_Project_High_Level.py    # High-Level Code: Main program
+├── CTK_BioE134_Final_Project_Middle_Level.py  # Middle-Level: Toolkit Selection, gRNA Design
+└── Test case.txt                              # Test inputs and expected outputs
+How to Run the Project
+1. Install Dependencies
+Ensure Python dependencies are installed:
+
+bash
+Copy code
+pip install biopython pytest
+2. Run Unit Tests
+Verify all functions are working correctly:
+
+bash
+Copy code
+pytest test_crispr_toolkit.py
+3. Generate a Construction File
+Run the High-Level script with sample inputs:
+
+bash
+Copy code
+python CTK_BioE134_Final_Project_High_Level.py --plant_name "Arabidopsis" --target_sequence "<Your_Target_Sequence>"
+Example Output:
+css
+Copy code
+pcr Arabidopsis_SpCas9_Toolkit_gRNA_forward Arabidopsis_SpCas9_Toolkit_gRNA_reverse SpCas9 Toolkit_template Arabidopsis_SpCas9_Toolkit_gRNA_pcr
+digest Arabidopsis_SpCas9_Toolkit_gRNA_pcr NGG 1 Arabidopsis_SpCas9_Toolkit_gRNA_digested
+ligate Arabidopsis_SpCas9_Toolkit_gRNA_digested Arabidopsis_SpCas9_Toolkit_gRNA_ligated
+transform Arabidopsis_SpCas9_Toolkit_gRNA_ligated Arabidopsis Spec SpCas9 Toolkit_edited
+C9 Integration
+The project includes JSON-based wrappers for C9 integration. These wrappers define function metadata, including inputs, outputs, descriptions, and usage examples for functions like:
+
+find_pam_general
+design_grna_general
+select_toolkit
+design_gRNA
+These wrappers are located in the CTK_BioE134_C9_Wrappers file.
+
+Accomplishments
+Toolkit Selection: Supports SpCas9, FnCas12a, SaCas9 systems.
+gRNA Design: Tailors gRNAs to the target sequence and toolkit.
+Construction Files: Outputs actionable, plant-specific genome editing workflows.
+Testing Framework: Includes unit tests with pytest.
+Future Improvements
+gRNA Optimization: Minimize off-target effects.
+Expanded Toolkit Database: Add base editors and prime editors.
+Graphical User Interface (GUI): Simplify toolkit usage for non-programmers.
+References
+1. Zhang et al. (2017). Genome Biology.
+2. Huang et al. (2021). Plant Biotechnology Journal.
+3. Jia et al. (2017). Frontiers in Plant Science.
+4. Qin et al. (2018). Plant Biotechnology Journal.
+5. An et al. (2020). Frontiers in Plant Science.
+6. Malzahn et al. (2019). BMC Biology.
+7. Yamamoto et al. (2019). Plant and Cell Physiology.
+For the full bibliography, refer to the CTK_BioE134_Citations.txt file.

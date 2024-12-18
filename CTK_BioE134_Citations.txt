@@ -1,0 +1,28 @@
+Bibliography
+Zhang, D., Zhang, H., Li, T., Chen, K., Qiu, J.-L., & Gao, C. (2017). Perfectly matched 20-nucleotide guide RNA sequences enable robust genome editing using high-fidelity SpCas9 nucleases. Genome Biology, 18(191). https://doi.org/10.1186/s13059-017-1325-9&#8203;:contentReference[oaicite:0]{index=0}.
+
+Huang, T.-K., Armstrong, B., Schindele, P., & Puchta, H. (2021). Efficient gene targeting in Nicotiana tabacum using CRISPR/SaCas9 and temperature tolerant LbCas12a. Plant Biotechnology Journal, 19, 1314–1324. https://doi.org/10.1111/pbi.13546&#8203;:contentReference[oaicite:1]{index=1}.
+
+Jia, H., Xu, J., Orbović, V., Zhang, Y., & Wang, N. (2017). Editing citrus genome via SaCas9/sgRNA system. Frontiers in Plant Science, 8, 2135. https://doi.org/10.3389/fpls.2017.02135&#8203;:contentReference[oaicite:2]{index=2}.
+
+Qin, R., Li, J., Li, H., Zhang, Y., Liu, X., Miao, Y., Zhang, X., & Wei, P. (2018). Developing a highly efficient and widely adaptive CRISPR‐SaCas9 toolset for plant genome editing. Plant Biotechnology Journal. https://doi.org/10.1111/pbi.13037&#8203;:contentReference[oaicite:3]{index=3}.
+
+An, Y., Geng, Y., Yao, J., Fu, C., Lu, M., Wang, C., & Du, J. (2020). Efficient genome editing in Populus using CRISPR/Cas12a. Frontiers in Plant Science, 11, 593938. https://doi.org/10.3389/fpls.2020.593938&#8203;:contentReference[oaicite:4]{index=4}.
+
+Malzahn, A. A., Tang, X., Lee, K., Ren, Q., Sretenovic, S., Zhang, Y., ... & Qi, Y. (2019). Application of CRISPR-Cas12a temperature sensitivity for improved genome editing in rice, maize, and Arabidopsis. BMC Biology, 17(9). https://doi.org/10.1186/s12915-019-0629-5&#8203;:contentReference[oaicite:5]{index=5}.
+
+Yamamoto, A., Ishida, T., Yoshimura, M., Kimura, Y., & Sawa, S. (2019). Developing heritable mutations in Arabidopsis thaliana using a modified CRISPR/Cas9 toolkit comprising PAM-altered Cas9 variants and gRNAs. Plant and Cell Physiology, 60(10), 2255–2262. https://doi.org/10.1093/pcp/pcz118&#8203;:contentReference[oaicite:6]{index=6}.
+
+Ordon, J., Bressan, M., Kretschmer, C., Dall’Osto, L., Marillonnet, S., Bassi, R., & Stuttmann, J. (2019). Optimized Cas9 expression systems for highly efficient Arabidopsis genome editing facilitate isolation of complex alleles in a single generation. Functional & Integrative Genomics, 20, 151–162. https://doi.org/10.1007/s10142-019-00665-4&#8203;:contentReference[oaicite:7]{index=7}.
+
+Wink, M. (2011). An Introduction to Molecular Biotechnology: Fundamentals, Methods and Applications (2nd ed.). Wiley-Blackwell.
+
+Yiping Qi (Ed.) (2019). Plant Genome Editing with CRISPR Systems: Methods and Protocols. Methods in Molecular Biology, Springer. https://doi.org/10.1007/978-1-4939-8991-1&#8203;:contentReference[oaicite:0]{index=0}.
+
+Belhaj, K., Chaparro-Garcia, A., Kamoun, S., Patron, N. J., & Nekrasov, V. (2015). Editing plant genomes with CRISPR/Cas9. Current Opinion in Biotechnology, 32, 76–84. https://doi.org/10.1016/j.copbio.2014.11.007&#8203;:contentReference[oaicite:1]{index=1}.
+
+Alok, A., Kumar, J., & Shekhawat, M. S. (Eds.) (2025). Basics of CRISPR/Cas Mediated Plant Genome Editing. CRC Press. https://doi.org/10.1201/9781003247685&#8203;:contentReference[oaicite:2]{index=2}.
+
+Wang, F., Wang, C., Liu, P., Lei, C., Hao, W., Gao, Y., ... & Zhou, Y. (2017). Revolutionizing plant biology: Multiple ways of genome engineering by CRISPR-Cas. Molecular Plant, 10(1), 18–36.
+
+
